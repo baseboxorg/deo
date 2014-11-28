@@ -1,0 +1,32 @@
+# Deis requirements for Sphinx documentation generation
+# This avoids readthedocs.org having to install many packages that aren't
+# actually needed to make the docs, while honoring their limitation of
+# one requirements file. Please keep it up-to-date with the root
+# requirements.txt and dev_requirements.txt files.
+#
+# NOTE: For testing on Mac OS X Mavericks, use the following to work around a clang issue:
+# ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip install [args]
+#
+Django==1.6.8
+# FIXME: switch to upstream pending merge of https://github.com/kmmbvnr/django-fsm/pull/59
+git+https://github.com/deis/django-fsm@propagate-false
+django-cors-headers==0.13
+django-guardian==1.2.4
+django-json-field==0.5.7
+djangorestframework==2.4.4
+docker-py==0.4.0
+gunicorn==19.1.1
+paramiko==1.14.1
+psycopg2==2.5.4
+python-etcd==0.3.2
+South==1.0.1
+
+# Deis client requirements
+docopt==0.6.2
+python-dateutil==2.2
+requests==2.4.3
+termcolor==1.1.0
+
+# Deis documentation requirements
+Sphinx>=1.2.3
+smartypants>=1.8.6

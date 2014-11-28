@@ -1,0 +1,11 @@
+[template]
+src   = "check-repos"
+dest  = "/home/git/check-repos"
+uid = 0
+gid = 0
+mode  = "0755"
+keys = [
+  "/deis/services",
+]
+reload_cmd = "/home/git/check-repos"
+check_cmd = "/app/bin/check {{ .src }}"
